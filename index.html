@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solicite seu Orçamento</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="card" id="card">
+      <header class="card-header">
+        <h1>Solicite seu Orçamento</h1>
+        <p>Preencha os dados abaixo e fale com a gente pelo WhatsApp</p>
+      </header>
+
+      <form id="contact-form" novalidate>
+        <!-- Nome completo -->
+        <div class="field">
+          <label for="name">Nome completo</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Digite seu nome completo"
+            autocomplete="name"
+          />
+          <span class="error-message" id="name-error"></span>
+        </div>
+
+        <!-- Telefone -->
+        <div class="field">
+          <label for="phone">Telefone</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="(99) 99999-9999"
+            inputmode="numeric"
+            autocomplete="tel"
+          />
+          <span class="error-message" id="phone-error"></span>
+        </div>
+
+        <!-- Descrição do serviço -->
+        <div class="field">
+          <label for="description">Descrição do serviço</label>
+          <textarea
+            id="description"
+            name="description"
+            rows="4"
+            placeholder="Conte com detalhes o serviço que você precisa"
+          ></textarea>
+          <span class="error-message" id="description-error"></span>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <span class="btn-content">
+            <svg
+              class="whatsapp-icon"
+              viewBox="0 0 32 32"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M16.004 3C9.377 3 4 8.373 4 15c0 2.386.712 4.607 1.932 6.463L4 29l7.73-1.902A11.93 11.93 0 0 0 16.004 27C22.63 27 28 21.627 28 15S22.63 3 16.004 3Zm0 21.75c-1.99 0-3.86-.55-5.46-1.5l-.39-.23-4.59 1.13 1.15-4.47-.25-.4A9.7 9.7 0 0 1 5.25 15c0-5.93 4.82-10.75 10.754-10.75S26.75 9.07 26.75 15 21.938 24.75 16.004 24.75Zm5.94-8.07c-.32-.16-1.9-.94-2.2-1.05-.3-.11-.51-.16-.73.16-.21.32-.84 1.05-1.03 1.26-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.6-1.6-.96-.86-1.61-1.92-1.8-2.24-.19-.32-.02-.5.14-.66.14-.14.32-.38.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.73-1.75-1-2.4-.26-.62-.53-.54-.73-.55h-.62c-.21 0-.56.08-.85.4-.29.32-1.12 1.1-1.12 2.67 0 1.57 1.15 3.09 1.31 3.3.16.21 2.26 3.45 5.48 4.84.77.33 1.36.53 1.83.68.77.24 1.47.21 2.02.13.62-.09 1.9-.78 2.17-1.53.27-.75.27-1.4.19-1.53-.08-.13-.29-.21-.61-.37Z"
+              />
+            </svg>
+            Enviar via WhatsApp
+          </span>
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
