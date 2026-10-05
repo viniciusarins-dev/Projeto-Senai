@@ -108,6 +108,23 @@ if (form) {
       `Assunto: ${assunto}\n` +
       `Telefone: ${campos.telefone.value.trim()}\n\n` +
       campos.mensagem.value.trim();
-    window.open(`https://wa.me/${numero}?text=${encodeURIComponent(texto)}`, "_blank", "noopener");
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+    const janela = window.open(url, "_blank");
+    if (janela) {
+      janela.opener = null;
+      return;
+    }
+    // Navegador bloqueou a nova aba: oferece o link direto.
+    let link = form.querySelector(".formulario__link");
+    if (!link) {
+      link = document.createElement("a");
+      link.className = "link-seta formulario__link";
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.textContent = "Abrir a mensagem no WhatsApp →";
+      form.append(link);
+    }
+    link.href = url;
+    link.focus();
   });
 }
