@@ -1,87 +1,373 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Solicite seu Orçamento</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CRIEXO — Impressão 3D personalizada | Sua ideia, nosso projeto</title>
+<meta name="description" content="CRIEXO Soluções Criativas: impressão 3D personalizada. Quadros, vasos, decoração, escritório, infantil, datas especiais, personalização com suas fotos e projetos sob medida.">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+<meta name="theme-color" content="#151515">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="CRIEXO">
+<meta property="og:title" content="CRIEXO — Impressão 3D personalizada | Sua ideia, nosso projeto">
+<meta property="og:description" content="CRIEXO Soluções Criativas: impressão 3D personalizada. Quadros, vasos, decoração, escritório, infantil, datas especiais, personalização com suas fotos e projetos sob medida.">
+<meta property="og:image" content="assets/img/og-criexo.jpg">
 
-  <link rel="stylesheet" href="style.css" />
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/archivo-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"CRIEXO — Soluções criativas","slogan":"Sua ideia, nosso projeto!","telephone":"+5547997646327","sameAs":["https://www.instagram.com/criexo/"]}</script>
+<script>document.documentElement.classList.add("js")</script>
+<script src="assets/js/main.js" defer></script>
 </head>
 <body>
-  <main class="page">
-    <section class="card" id="card">
-      <header class="card-header">
-        <h1>Solicite seu Orçamento</h1>
-        <p>Preencha os dados abaixo e fale com a gente pelo WhatsApp</p>
-      </header>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
-      <form id="contact-form" novalidate>
-        <!-- Nome completo -->
-        <div class="field">
-          <label for="name">Nome completo</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Digite seu nome completo"
-            autocomplete="name"
-          />
-          <span class="error-message" id="name-error"></span>
+<header class="topo topo--escuro" data-topo>
+  <div class="topo__barra">
+    <a class="marca" href="./" aria-label="CRIEXO — página inicial">
+      <span class="marca__nome">CRIEXO</span>
+      <span class="marca__assinatura">Soluções criativas</span>
+    </a>
+    <nav class="topo__nav" id="menu" aria-label="Principal">
+      <ul>
+        <li><a href="#colecoes">Produtos</a></li><li><a href="#sob-medida">Sob medida</a></li><li><a href="#sobre">Sobre</a></li><li><a href="#contato">Contato</a></li>
+      </ul>
+      <a class="topo__cta" href="https://wa.me/5547997646327?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20CRIEXO%20e%20gostaria%20de%20solicitar%20um%20projeto." target="_blank" rel="noopener">
+        Solicitar projeto <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4.5 16.5 10 11 15.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+      </a>
+    </nav>
+    <button class="topo__menu" type="button" aria-expanded="false" aria-controls="menu" data-menu>
+      <span class="topo__menu-abrir">Menu</span><span class="topo__menu-fechar">Fechar</span>
+    </button>
+  </div>
+</header>
+<main id="conteudo">
+
+<section class="hero" aria-labelledby="hero-titulo">
+  <div class="hero__grade">
+    <div class="hero__texto">
+      <p class="rotulo hero__rotulo"><span class="regua" aria-hidden="true"></span>Impressão 3D personalizada</p>
+      <h1 class="hero__titulo" id="hero-titulo">
+        <span class="hero__linha">Sua ideia,</span>
+        <span class="hero__linha"><em>nosso</em> projeto.</span>
+      </h1>
+      <p class="hero__lede">Decoração, presentes, organização e peças técnicas feitas sob encomenda — na cor, no tamanho e com o nome que você escolher.</p>
+      <div class="hero__acoes">
+        <a class="botao botao--laranja" href="#contato">Solicitar projeto <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4.5 16.5 10 11 15.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+        <a class="link-seta" href="#colecoes">Ver as coleções <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4.5 16.5 10 11 15.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+      </div>
+    </div>
+    <figure class="hero__figura">
+      <img src="assets/img/capa-impressora.webp" width="1400" height="1090" alt="Impressora 3D imprimindo um vaso laranja em espiral, cercada por peças impressas: esfera vazada, gato facetado, foguete e engrenagens" sizes="(min-width: 900px) 55vw, 100vw" fetchpriority="high" decoding="async">
+      <figcaption class="hero__legenda">
+        <span>Ideia <i>→</i> Projeto 3D <i>→</i> Impressão <i>→</i> Resultado</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+<section class="secao colecoes" id="colecoes" aria-labelledby="colecoes-titulo">
+  <header class="cabeca">
+    <p class="rotulo"><span class="regua" aria-hidden="true"></span>Produtos</p>
+    <h2 class="titulo-secao" id="colecoes-titulo">Coleções</h2>
+    <p class="cabeca__texto">Do vaso ao quadro, da miniatura ao organizador de mesa. Escolha um ponto de partida — cor, tamanho e nome a gente ajusta com você.</p>
+  </header>
+  <div class="grade-colecoes">
+    
+  <a class="colecao colecao--a" href="colecoes/fotos/" data-reveal>
+    <figure class="colecao__figura">
+      <img src="assets/img/fotos-pets.webp" width="614" height="512" alt="Miniatura de um gato rajado feita a partir de uma foto, ao lado do porta-retrato com a foto original" sizes="(min-width: 900px) 50vw, 100vw" loading="lazy" decoding="async">
+    </figure>
+    <div class="colecao__info">
+      <span class="colecao__num">01</span>
+      <h3 class="colecao__nome">Com suas fotos</h3>
+      <p class="colecao__tag">Transforme suas melhores lembranças em miniaturas e muito mais!</p>
+      <p class="colecao__itens">Pets · Pessoas · Momentos · Canecas · Quebra-cabeças · Capinhas</p>
+      <span class="colecao__ver">Ver coleção <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4.5 16.5 10 11 15.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+    </div>
+  </a>
+  <a class="colecao colecao--b" href="colecoes/quadros/" data-reveal>
+    <figure class="colecao__figura">
+      <img src="assets/img/quadros-marcos.webp" width="642" height="668" alt="Quadro com um par de tênis rosa em relevo e os textos 5KM e 26:30" sizes="(min-width: 900px) 50vw, 100vw" loading="lazy" decoding="async">
+    </figure>
+    <div class="colecao__info">
+      <span class="colecao__num">02</span>
+      <h3 class="colecao__nome">Quadros</h3>
+      <p class="colecao__tag">Arte que combina com a sua história!</p>
+      <p class="colecao__itens">Camisas de times · Séries, filmes e livros · Música · Objetos · Marcos pessoais · Carros</p>
+      <span class="colecao__ver">Ver coleção <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4.5 16.5 10 11 15.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+    </div>
+  </a>
+  <a class="colecao colecao--c" href="colecoes/vasos/" data-reveal>
+    <figure class="colecao__figura">
+      <img src="assets/img/vasos-emoji.webp" width="650" height="626" alt="Vaso amarelo em formato de emoji sorridente com uma planta" sizes="(min-width: 900px) 50vw, 100vw" loading="lazy" decoding="async">
+    </figure>
+    <div class="colecao__info">
+      <span class="colecao__num">03</span>
+      <h3 class="colecao__nome">Vasos</h3>
+      <p class="colecao__tag">Deixe seu espaço mais verde!</p>
+      <p class="colecao__itens">Vasos texturizados · Vasos emoji · Vasos de frutas · Vasos de animais · Vasos de bolas · Vasos diversos</p>
+      <span class="colecao__ver">Ver coleção <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4.5 16.5 10 11 15.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+    </div>
+  </a>
+  <a class="colecao colecao--d" href="colecoes/sala/" data-reveal>
+    <figure class="colecao__figura">
+      <img src="assets/img/sala-mapa.webp" width="954" height="1016" alt="Painel de módulos hexagonais com o mapa-múndi recortado em preto e luz quente por trás" sizes="(min-width: 900px) 50vw, 100vw" loading="lazy" decoding="async">
+    </figure>
+    <div class="colecao__info">
+      <span class="colecao__num">04</span>
+      <h3 class="colecao__nome">Sala</h3>
+      <p class="colecao__tag">Mais personalidade para o seu espaço!</p>
+      <p class="colecao__itens">Quadros modulares de parede · Iluminação · Decorações interativas · Esculturas</p>
+      <span class="colecao__ver">Ver coleção <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4.5 16.5 10 11 15.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+    </div>
+  </a>
+  <a class="colecao colecao--e" href="colecoes/escritorio/" data-reveal>
+    <figure class="colecao__figura">
+      <img src="assets/img/escritorio-teclas.webp" width="642" height="420" alt="Teclas de teclado em formato de patinha de gato e de gatinho" sizes="(min-width: 900px) 50vw, 100vw" loading="lazy" decoding="async">
+    </figure>
+    <div class="colecao__info">
+      <span class="colecao__num">05</span>
+      <h3 class="colecao__nome">Escritório</h3>
+      <p class="colecao__tag">Mais organização e estilo para o seu dia a dia!</p>
+      <p class="colecao__itens">Teclas para teclado · Organizadores de cabos · Ponta de lápis · Porta lápis · Porta celulares</p>
+      <span class="colecao__ver">Ver coleção <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4.5 16.5 10 11 15.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+    </div>
+  </a>
+  <a class="colecao colecao--f" href="colecoes/infantil/" data-reveal>
+    <figure class="colecao__figura">
+      <img src="assets/img/infantil-quarto.webp" width="626" height="430" alt="Placa com arco-íris em tons pastel e a palavra nome" sizes="(min-width: 900px) 50vw, 100vw" loading="lazy" decoding="async">
+    </figure>
+    <div class="colecao__info">
+      <span class="colecao__num">06</span>
+      <h3 class="colecao__nome">Infantil</h3>
+      <p class="colecao__tag">Transforme suas ideias em realidade!</p>
+      <p class="colecao__itens">Brinquedos · Quebra-cabeças pixelados · Porta trecos · Decorações para quarto</p>
+      <span class="colecao__ver">Ver coleção <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4.5 16.5 10 11 15.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+    </div>
+  </a>
+  </div>
+  <div class="datas">
+    <h3 class="datas__titulo">Datas especiais</h3>
+    <div class="grade-datas">
+      
+  <a class="colecao colecao--data" href="colecoes/halloween/" data-reveal>
+    <figure class="colecao__figura">
+      <img src="assets/img/halloween-vasos.webp" width="1400" height="740" alt="Pote em formato de caveira e vaso laranja em formato de abóbora" sizes="(min-width: 900px) 50vw, 100vw" loading="lazy" decoding="async">
+    </figure>
+    <div class="colecao__info">
+      <span class="colecao__num">07</span>
+      <h3 class="colecao__nome">Halloween</h3>
+      
+      <p class="colecao__itens">Miniaturas · Vasos / Potes · Lanternas</p>
+      <span class="colecao__ver">Ver coleção <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4.5 16.5 10 11 15.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+    </div>
+  </a>
+  <a class="colecao colecao--data" href="colecoes/natal/" data-reveal>
+    <figure class="colecao__figura">
+      <img src="assets/img/natal-miniaturas.webp" width="1400" height="469" alt="Miniaturas de Natal: Papai Noel, rena, duende, boneco de neve, pinguins e urso polar" sizes="(min-width: 900px) 50vw, 100vw" loading="lazy" decoding="async">
+    </figure>
+    <div class="colecao__info">
+      <span class="colecao__num">08</span>
+      <h3 class="colecao__nome">Natal</h3>
+      
+      <p class="colecao__itens">Miniaturas · Enfeites · Decorações</p>
+      <span class="colecao__ver">Ver coleção <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4.5 16.5 10 11 15.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+    </div>
+  </a>
+  <a class="colecao colecao--data" href="colecoes/dia-dos-namorados/" data-reveal>
+    <figure class="colecao__figura">
+      <img src="assets/img/namorados-quadros.webp" width="1316" height="390" alt="Quadros com coração vermelho e as palavras Love, amor e Juntos é melhor" sizes="(min-width: 900px) 50vw, 100vw" loading="lazy" decoding="async">
+    </figure>
+    <div class="colecao__info">
+      <span class="colecao__num">09</span>
+      <h3 class="colecao__nome">Dia dos Namorados</h3>
+      
+      <p class="colecao__itens">Chaveiros · Quadros</p>
+      <span class="colecao__ver">Ver coleção <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4.5 16.5 10 11 15.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+    </div>
+  </a>
+    </div>
+  </div>
+</section>
+<section class="destaque" aria-labelledby="destaque-titulo">
+  <div class="destaque__grade">
+    <figure class="destaque__principal" data-reveal>
+      <img src="assets/img/sala-mapa.webp" width="954" height="1016" alt="Painel de módulos hexagonais com o mapa-múndi recortado em preto e luz quente por trás" sizes="(min-width: 900px) 50vw, 100vw" loading="lazy" decoding="async">
+    </figure>
+    <div class="destaque__texto" data-reveal>
+      <p class="rotulo"><span class="regua" aria-hidden="true"></span>Em destaque · Decorações para sala</p>
+      <h2 class="titulo-secao" id="destaque-titulo">Quadros modulares de parede</h2>
+      <p class="destaque__frase">Mais personalidade para o seu espaço!</p>
+      <dl class="ficha">
+        <div><dt>Coleção</dt><dd>Decorações para sala</dd></div>
+        <div><dt>Personalize</dt><dd>Cor · Tamanho · Nomes</dd></div>
+      </dl>
+      <figure class="destaque__detalhe">
+        <img src="assets/img/sala-mapa-bussola.webp" width="820" height="540" alt="Detalhe do módulo hexagonal com a rosa dos ventos" sizes="(min-width: 900px) 25vw, 60vw" loading="lazy" decoding="async">
+        <figcaption>Detalhe — módulo com rosa dos ventos</figcaption>
+      </figure>
+      <div class="acoes">
+        <a class="botao botao--laranja" href="https://wa.me/5547997646327?text=Ol%C3%A1!%20Vi%20no%20site%20os%20Quadros%20modulares%20de%20parede%20(Decora%C3%A7%C3%B5es%20para%20sala)%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">Pedir orçamento <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4.5 16.5 10 11 15.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+        <a class="link-seta" href="colecoes/sala/">Ver decorações para sala <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4.5 16.5 10 11 15.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="secao fotos" aria-labelledby="fotos-titulo">
+  <div class="fotos__grade">
+    <div class="fotos__texto" data-reveal>
+      <p class="rotulo"><span class="regua" aria-hidden="true"></span>Personalização com suas fotos</p>
+      <h2 class="titulo-secao" id="fotos-titulo">Suas histórias também merecem <em>ser eternizadas.</em></h2>
+      <p>Transforme suas melhores lembranças em miniaturas e muito mais!</p>
+      <ol class="etapas">
+        <li><span>01</span>Envie sua foto</li><li><span>02</span>Personalizamos</li><li><span>03</span>Transformamos em algo especial</li>
+      </ol>
+      <div class="acoes">
+        <a class="botao" href="https://wa.me/5547997646327?text=Ol%C3%A1!%20Tenho%20uma%20foto%20especial%20e%20gostaria%20de%20transform%C3%A1-la%20em%20um%20projeto%20personalizado." target="_blank" rel="noopener">Tem uma foto especial? <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4.5 16.5 10 11 15.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+        <a class="link-seta" href="colecoes/fotos/">Ver a coleção <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4.5 16.5 10 11 15.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+      </div>
+    </div>
+    <div class="fotos__imagens">
+      <figure class="fotos__img fotos__img--1" data-reveal><img src="assets/img/fotos-pets.webp" width="614" height="512" alt="Miniatura de um gato rajado feita a partir de uma foto, ao lado do porta-retrato com a foto original" sizes="(min-width: 900px) 22vw, 45vw" loading="lazy" decoding="async"><figcaption>Pets</figcaption></figure><figure class="fotos__img fotos__img--2" data-reveal><img src="assets/img/fotos-pessoas.webp" width="614" height="542" alt="Miniatura de um jogador com camisa preta número 25 segurando um capacete" sizes="(min-width: 900px) 22vw, 45vw" loading="lazy" decoding="async"><figcaption>Pessoas</figcaption></figure><figure class="fotos__img fotos__img--3" data-reveal><img src="assets/img/fotos-canecas.webp" width="622" height="512" alt="Caneca preta estampada com a foto de um golden retriever" sizes="(min-width: 900px) 22vw, 45vw" loading="lazy" decoding="async"><figcaption>Canecas</figcaption></figure>
+    </div>
+  </div>
+</section>
+<section class="sob-medida" id="sob-medida" aria-labelledby="sob-medida-titulo">
+  <div class="sob-medida__topo">
+    <header class="cabeca cabeca--claro">
+      <p class="rotulo"><span class="regua" aria-hidden="true"></span>Projetos sob medida</p>
+      <h2 class="titulo-secao" id="sob-medida-titulo">Da necessidade <em>à peça.</em></h2>
+      <p class="cabeca__texto">Transformamos suas necessidades em modelos 3D precisos e funcionais.</p>
+    </header>
+    <ul class="servicos">
+      <li>Desenvolvimento de projetos</li><li>Modelagem 3D personalizada</li><li>Qualidade e precisão</li>
+    </ul>
+  </div>
+  <figure class="sob-medida__cad" data-reveal>
+    <img src="assets/img/sob-medida-cad.webp" width="1400" height="1010" alt="Notebook exibindo a modelagem 3D de um conjunto de engrenagens planetárias" sizes="(min-width: 1200px) 1100px, 100vw" loading="lazy" decoding="async">
+  </figure>
+  <ol class="processo">
+    
+      <li class="processo__passo" data-reveal>
+        <span class="processo__num">01</span>
+        <h3>Ideia</h3>
+        <p>Você nos conta o que precisa.</p>
+      </li>
+      <li class="processo__passo" data-reveal>
+        <span class="processo__num">02</span>
+        <h3>Projeto 3D</h3>
+        <p>Desenvolvemos o modelo com total precisão.</p>
+      </li>
+      <li class="processo__passo" data-reveal>
+        <span class="processo__num">03</span>
+        <h3>Impressão</h3>
+        <p>Seu projeto ganha vida em 3D.</p>
+      </li>
+      <li class="processo__passo" data-reveal>
+        <span class="processo__num">04</span>
+        <h3>Resultado</h3>
+        <p>Peças personalizadas, com qualidade e funcionalidade.</p>
+      </li>
+  </ol>
+  <div class="exemplos">
+    <p class="rotulo">Exemplos de projetos</p>
+    <ul class="exemplos__lista">
+      <li data-reveal><figure><img src="assets/img/sob-medida-pecas.webp" width="372" height="224" alt="Conjunto de engrenagens cinza impressas em 3D" sizes="(min-width: 900px) 20vw, 45vw" loading="lazy" decoding="async"><figcaption>Peças mecânicas</figcaption></figure></li><li data-reveal><figure><img src="assets/img/sob-medida-suportes.webp" width="368" height="224" alt="Suporte em L preto com furos de fixação" sizes="(min-width: 900px) 20vw, 45vw" loading="lazy" decoding="async"><figcaption>Suportes e fixações</figcaption></figure></li><li data-reveal><figure><img src="assets/img/sob-medida-gabinetes.webp" width="358" height="224" alt="Gabinete preto com grade de ventilação e ventoinha" sizes="(min-width: 900px) 20vw, 45vw" loading="lazy" decoding="async"><figcaption>Gabinetes e carcaças</figcaption></figure></li><li data-reveal><figure><img src="assets/img/sob-medida-componentes.webp" width="352" height="224" alt="Componente mecânico de várias partes encaixadas" sizes="(min-width: 900px) 20vw, 45vw" loading="lazy" decoding="async"><figcaption>Componentes especiais</figcaption></figure></li>
+    </ul>
+  </div>
+  <div class="sob-medida__cta">
+    <a class="botao botao--laranja" href="https://wa.me/5547997646327?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20projeto%20personalizado%20(sob%20medida)." target="_blank" rel="noopener">Solicitar projeto personalizado <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4.5 16.5 10 11 15.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+    <p class="manuscrito">Conte com a gente!</p>
+  </div>
+</section>
+<section class="secao sobre" id="sobre" aria-labelledby="sobre-titulo">
+  <div class="sobre__grade">
+    <p class="rotulo"><span class="regua" aria-hidden="true"></span>Sobre</p>
+    <h2 class="sobre__titulo" id="sobre-titulo">CRIEXO<span>Soluções criativas</span></h2>
+    <div class="sobre__texto" data-reveal>
+      <p class="sobre__abre">Um vaso em forma de emoji. A camisa do seu time num quadro. Seu pet em miniatura. Uma tecla com patinha de gato. Um suporte desenhado para resolver exatamente o seu problema.</p>
+      <p>Parece muita coisa diferente — e é. O que une tudo é o jeito de fazer: você conta o que precisa, a gente desenvolve o modelo em 3D e imprime. Cor, tamanho e nome entram na conversa desde o começo, porque a peça é sua.</p>
+    </div>
+  </div>
+</section>
+<section class="secao contato" id="contato" aria-labelledby="contato-titulo">
+  <div class="contato__grade">
+    <div class="contato__intro">
+      <p class="rotulo"><span class="regua" aria-hidden="true"></span>Contato</p>
+      <h2 class="titulo-secao" id="contato-titulo">Fale com <em>a gente.</em></h2>
+      <p>Para comprar, pedir orçamento, tirar dúvidas ou começar um projeto personalizado.</p>
+      <ul class="canais">
+        <li><a href="https://wa.me/5547997646327?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20CRIEXO." target="_blank" rel="noopener"><span class="rotulo">WhatsApp</span><strong>(47) 99764-6327</strong></a></li>
+        <li><a href="https://www.instagram.com/criexo/" target="_blank" rel="noopener"><span class="rotulo">Instagram</span><strong>@criexo</strong></a></li>
+      </ul>
+    </div>
+    <form class="formulario" id="formulario" novalidate data-whatsapp="5547997646327">
+      <p class="formulario__titulo">Monte sua mensagem — ela abre pronta no WhatsApp.</p>
+      <div class="campo">
+        <label for="f-nome">Nome</label>
+        <input id="f-nome" name="nome" type="text" autocomplete="name" required>
+        <p class="campo__erro" id="f-nome-erro" aria-live="polite"></p>
+      </div>
+      <div class="campo">
+        <label for="f-telefone">Telefone</label>
+        <input id="f-telefone" name="telefone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="(00) 00000-0000" required>
+        <p class="campo__erro" id="f-telefone-erro" aria-live="polite"></p>
+      </div>
+      <fieldset class="campo campo--assunto">
+        <legend>Assunto</legend>
+        <div class="opcoes">
+          
+          <label class="opcao"><input type="radio" name="assunto" value="Comprar"><span>Comprar</span></label>
+          <label class="opcao"><input type="radio" name="assunto" value="Orçamento" checked><span>Orçamento</span></label>
+          <label class="opcao"><input type="radio" name="assunto" value="Dúvida"><span>Dúvida</span></label>
+          <label class="opcao"><input type="radio" name="assunto" value="Projeto personalizado"><span>Projeto personalizado</span></label>
         </div>
+      </fieldset>
+      <div class="campo">
+        <label for="f-mensagem">O que você precisa?</label>
+        <textarea id="f-mensagem" name="mensagem" rows="4" required placeholder="Ex.: um vaso emoji amarelo com o nome Ana"></textarea>
+        <p class="campo__erro" id="f-mensagem-erro" aria-live="polite"></p>
+      </div>
+      <button class="botao botao--escuro" type="submit"><svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C9.4 3 4 8.4 4 15c0 2.4.7 4.6 1.9 6.5L4 29l7.7-1.9A12 12 0 0 0 16 27c6.6 0 12-5.4 12-12S22.6 3 16 3Zm0 21.8c-2 0-3.9-.6-5.5-1.5l-.4-.2-4.6 1.1 1.2-4.5-.3-.4A9.7 9.7 0 0 1 5.3 15C5.3 9.1 10.1 4.3 16 4.3S26.8 9.1 26.8 15 21.9 24.8 16 24.8Zm5.9-8.1c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.5 5.5 4.8.8.3 1.4.5 1.8.7.8.2 1.5.2 2 .1.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4Z"/></svg> Enviar pelo WhatsApp</button>
+    </form>
+  </div>
+</section>
+</main>
 
-        <!-- Telefone -->
-        <div class="field">
-          <label for="phone">Telefone</label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            placeholder="(99) 99999-9999"
-            inputmode="numeric"
-            autocomplete="tel"
-          />
-          <span class="error-message" id="phone-error"></span>
-        </div>
-
-        <!-- Descrição do serviço -->
-        <div class="field">
-          <label for="description">Descrição do serviço</label>
-          <textarea
-            id="description"
-            name="description"
-            rows="4"
-            placeholder="Conte com detalhes o serviço que você precisa"
-          ></textarea>
-          <span class="error-message" id="description-error"></span>
-        </div>
-
-        <button type="submit" class="submit-btn">
-          <span class="btn-content">
-            <svg
-              class="whatsapp-icon"
-              viewBox="0 0 32 32"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <path
-                d="M16.004 3C9.377 3 4 8.373 4 15c0 2.386.712 4.607 1.932 6.463L4 29l7.73-1.902A11.93 11.93 0 0 0 16.004 27C22.63 27 28 21.627 28 15S22.63 3 16.004 3Zm0 21.75c-1.99 0-3.86-.55-5.46-1.5l-.39-.23-4.59 1.13 1.15-4.47-.25-.4A9.7 9.7 0 0 1 5.25 15c0-5.93 4.82-10.75 10.754-10.75S26.75 9.07 26.75 15 21.938 24.75 16.004 24.75Zm5.94-8.07c-.32-.16-1.9-.94-2.2-1.05-.3-.11-.51-.16-.73.16-.21.32-.84 1.05-1.03 1.26-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.6-1.6-.96-.86-1.61-1.92-1.8-2.24-.19-.32-.02-.5.14-.66.14-.14.32-.38.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.73-1.75-1-2.4-.26-.62-.53-.54-.73-.55h-.62c-.21 0-.56.08-.85.4-.29.32-1.12 1.1-1.12 2.67 0 1.57 1.15 3.09 1.31 3.3.16.21 2.26 3.45 5.48 4.84.77.33 1.36.53 1.83.68.77.24 1.47.21 2.02.13.62-.09 1.9-.78 2.17-1.53.27-.75.27-1.4.19-1.53-.08-.13-.29-.21-.61-.37Z"
-              />
-            </svg>
-            Enviar via WhatsApp
-          </span>
-        </button>
-      </form>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
+<footer class="rodape">
+  <div class="rodape__grade">
+    <div class="rodape__marca">
+      <img src="assets/img/logo.webp" width="281" height="274" alt="CRIEXO — Soluções criativas" class="rodape__logo" loading="lazy" decoding="async">
+      <p class="rodape__slogan">Sua ideia, nosso projeto!</p>
+    </div>
+    <nav class="rodape__col" aria-label="Coleções">
+      <p class="rotulo">Coleções</p>
+      <ul>
+        <li><a href="colecoes/fotos/">Com suas fotos</a></li><li><a href="colecoes/quadros/">Quadros</a></li><li><a href="colecoes/vasos/">Vasos</a></li><li><a href="colecoes/sala/">Sala</a></li><li><a href="colecoes/escritorio/">Escritório</a></li><li><a href="colecoes/infantil/">Infantil</a></li><li><a href="colecoes/halloween/">Halloween</a></li><li><a href="colecoes/natal/">Natal</a></li><li><a href="colecoes/dia-dos-namorados/">Dia dos Namorados</a></li>
+      </ul>
+    </nav>
+    <nav class="rodape__col" aria-label="Site">
+      <p class="rotulo">Site</p>
+      <ul>
+        <li><a href="#colecoes">Produtos</a></li><li><a href="#sob-medida">Sob medida</a></li><li><a href="#sobre">Sobre</a></li><li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="rodape__col">
+      <p class="rotulo">Contato</p>
+      <ul>
+        <li><a href="https://wa.me/5547997646327?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20CRIEXO." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C9.4 3 4 8.4 4 15c0 2.4.7 4.6 1.9 6.5L4 29l7.7-1.9A12 12 0 0 0 16 27c6.6 0 12-5.4 12-12S22.6 3 16 3Zm0 21.8c-2 0-3.9-.6-5.5-1.5l-.4-.2-4.6 1.1 1.2-4.5-.3-.4A9.7 9.7 0 0 1 5.3 15C5.3 9.1 10.1 4.3 16 4.3S26.8 9.1 26.8 15 21.9 24.8 16 24.8Zm5.9-8.1c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.5 5.5 4.8.8.3 1.4.5 1.8.7.8.2 1.5.2 2 .1.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4Z"/></svg> (47) 99764-6327</a></li>
+        <li><a href="https://www.instagram.com/criexo/" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/></svg> @criexo</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="rodape__base">
+    <span>© 2026 CRIEXO — Soluções criativas</span>
+    <span>Impressão 3D personalizada</span>
+  </div>
+</footer>
 </body>
 </html>
