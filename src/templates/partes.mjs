@@ -26,12 +26,67 @@ export const imagem = (im, base, { classe = "", prioridade = false, sizes = "" }
 
 export const opcoesTexto = (opcoes = []) => opcoes.join(" · ");
 
+export const slugify = (s) =>
+  s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+
+// Texto de busca sem acentos: "Decorações" encontra "decoracoes" e vice-versa.
+const textoBusca = (...partes) =>
+  partes.join(" ").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
 const nav = (base) => [
   { href: `${base}#colecoes`, texto: "Produtos" },
   { href: `${base}#sob-medida`, texto: "Sob medida" },
   { href: `${base}#sobre`, texto: "Sobre" },
   { href: `${base}#contato`, texto: "Contato" },
 ];
+
+const totalProdutos = colecoes.reduce((n, c) => n + c.itens.length, 0);
+
+// Barra lateral: navegação + busca e filtro de produtos.
+const gaveta = (base) => `
+<dialog class="gaveta" id="gaveta" aria-labelledby="gaveta-titulo">
+  <div class="gaveta__corpo">
+    <div class="gaveta__topo">
+      <p class="rotulo" id="gaveta-titulo">Menu</p>
+      <button class="gaveta__fechar" type="button" data-gaveta-fechar>Fechar</button>
+    </div>
+
+    <section class="busca" aria-labelledby="busca-titulo" data-busca>
+      <h2 class="gaveta__secao" id="busca-titulo"><a href="${base}#colecoes" data-gaveta-link>Produtos</a></h2>
+      <label class="rotulo busca__rotulo" for="busca-campo">Buscar produto</label>
+      <input class="busca__campo" id="busca-campo" type="search" placeholder="Ex.: vaso, chaveiro, Natal" autocomplete="off" spellcheck="false">
+      <div class="busca__filtros" role="group" aria-label="Filtrar por coleção">
+        <button type="button" class="filtro" data-filtro="" aria-pressed="true">Todas <span>${totalProdutos}</span></button>
+        ${colecoes.map((c) => `<button type="button" class="filtro" data-filtro="${c.slug}" aria-pressed="false">${esc(c.nome)} <span>${c.itens.length}</span></button>`).join("")}
+      </div>
+      <p class="busca__contagem" aria-live="polite" data-busca-contagem>${totalProdutos} produtos</p>
+      <ul class="busca__lista">
+        ${colecoes.map((c) => c.itens.map((it) => `
+        <li data-colecao="${c.slug}" data-texto="${esc(textoBusca(it.nome, c.titulo, c.nome, ...(c.opcoes || [])))}">
+          <a href="${base}colecoes/${c.slug}/#${slugify(it.nome)}" data-gaveta-link>
+            ${it.imagem ? `<span class="busca__img">${imagem({ ...it.imagem, alt: "" }, base)}</span>` : `<span class="busca__img busca__img--vazio" aria-hidden="true"></span>`}
+            <span class="busca__nome">${esc(it.nome)}</span>
+            <span class="busca__colecao">${esc(c.titulo)}</span>
+          </a>
+        </li>`).join("")).join("")}
+      </ul>
+      <div class="busca__vazio" hidden data-busca-vazio>
+        <p>Nenhum produto encontrado com esse nome.</p>
+        <a class="link-seta" href="${whatsapp("Olá! Procurei no site e não encontrei o que preciso. Vocês fazem sob medida?")}" target="_blank" rel="noopener">Pedir um projeto sob medida ${icone.seta}</a>
+      </div>
+    </section>
+
+    <nav class="gaveta__nav" aria-label="Site">
+      <ul>
+        ${nav(base).slice(1).map((l) => `<li><a href="${l.href}" data-gaveta-link>${l.texto}</a></li>`).join("")}
+      </ul>
+    </nav>
+
+    <a class="botao botao--laranja gaveta__cta" href="${whatsapp("Olá! Vim pelo site da CRIEXO e gostaria de solicitar um projeto.")}" target="_blank" rel="noopener">
+      Solicitar projeto ${icone.seta}
+    </a>
+  </div>
+</dialog>`;
 
 export const header = (base, { escuro = false } = {}) => `
 <header class="topo${escuro ? " topo--escuro" : ""}" data-topo>
@@ -40,19 +95,19 @@ export const header = (base, { escuro = false } = {}) => `
       <span class="marca__nome">${marca.nome}</span>
       <span class="marca__assinatura">${marca.assinatura}</span>
     </a>
-    <nav class="topo__nav" id="menu" aria-label="Principal">
+    <nav class="topo__nav" aria-label="Principal">
       <ul>
-        ${nav(base).map((l) => `<li><a href="${l.href}">${l.texto}</a></li>`).join("")}
+        <li><button class="topo__produtos" type="button" aria-haspopup="dialog" aria-controls="gaveta" data-gaveta-abrir="busca">Produtos <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m12.6 12.6 4.4 4.4" stroke="currentColor" stroke-width="1.6"/></svg></button></li>
+        ${nav(base).slice(1).map((l) => `<li><a href="${l.href}">${l.texto}</a></li>`).join("")}
       </ul>
       <a class="topo__cta" href="${whatsapp("Olá! Vim pelo site da CRIEXO e gostaria de solicitar um projeto.")}" target="_blank" rel="noopener">
         Solicitar projeto ${icone.seta}
       </a>
     </nav>
-    <button class="topo__menu" type="button" aria-expanded="false" aria-controls="menu" data-menu>
-      <span class="topo__menu-abrir">Menu</span><span class="topo__menu-fechar">Fechar</span>
-    </button>
+    <button class="topo__menu" type="button" aria-haspopup="dialog" aria-controls="gaveta" data-gaveta-abrir>Menu</button>
   </div>
-</header>`;
+</header>
+${gaveta(base)}`;
 
 export const footer = (base) => `
 <footer class="rodape">

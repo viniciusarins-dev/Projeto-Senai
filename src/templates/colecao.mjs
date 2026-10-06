@@ -1,10 +1,7 @@
 import { marca, colecoes } from "../data/catalogo.mjs";
-import { esc, pad, whatsapp, icone, imagem, opcoesTexto, layout } from "./partes.mjs";
+import { esc, pad, whatsapp, icone, imagem, opcoesTexto, layout, slugify } from "./partes.mjs";
 
 const base = "../../";
-
-const slugify = (s) =>
-  s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
 // "Vasos personalizáveis" → o qualificador vira itálico, como o selo do catálogo.
 const tituloH1 = (t) => esc(t).replace(/(personaliz\S+)$/i, "<em>$1</em>");

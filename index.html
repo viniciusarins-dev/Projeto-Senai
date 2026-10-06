@@ -32,19 +32,328 @@
       <span class="marca__nome">CRIEXO</span>
       <span class="marca__assinatura">Soluções criativas</span>
     </a>
-    <nav class="topo__nav" id="menu" aria-label="Principal">
+    <nav class="topo__nav" aria-label="Principal">
       <ul>
-        <li><a href="#colecoes">Produtos</a></li><li><a href="#sob-medida">Sob medida</a></li><li><a href="#sobre">Sobre</a></li><li><a href="#contato">Contato</a></li>
+        <li><button class="topo__produtos" type="button" aria-haspopup="dialog" aria-controls="gaveta" data-gaveta-abrir="busca">Produtos <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m12.6 12.6 4.4 4.4" stroke="currentColor" stroke-width="1.6"/></svg></button></li>
+        <li><a href="#sob-medida">Sob medida</a></li><li><a href="#sobre">Sobre</a></li><li><a href="#contato">Contato</a></li>
       </ul>
       <a class="topo__cta" href="https://wa.me/5547997646327?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20CRIEXO%20e%20gostaria%20de%20solicitar%20um%20projeto." target="_blank" rel="noopener">
         Solicitar projeto <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4.5 16.5 10 11 15.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
       </a>
     </nav>
-    <button class="topo__menu" type="button" aria-expanded="false" aria-controls="menu" data-menu>
-      <span class="topo__menu-abrir">Menu</span><span class="topo__menu-fechar">Fechar</span>
-    </button>
+    <button class="topo__menu" type="button" aria-haspopup="dialog" aria-controls="gaveta" data-gaveta-abrir>Menu</button>
   </div>
 </header>
+
+<dialog class="gaveta" id="gaveta" aria-labelledby="gaveta-titulo">
+  <div class="gaveta__corpo">
+    <div class="gaveta__topo">
+      <p class="rotulo" id="gaveta-titulo">Menu</p>
+      <button class="gaveta__fechar" type="button" data-gaveta-fechar>Fechar</button>
+    </div>
+
+    <section class="busca" aria-labelledby="busca-titulo" data-busca>
+      <h2 class="gaveta__secao" id="busca-titulo"><a href="#colecoes" data-gaveta-link>Produtos</a></h2>
+      <label class="rotulo busca__rotulo" for="busca-campo">Buscar produto</label>
+      <input class="busca__campo" id="busca-campo" type="search" placeholder="Ex.: vaso, chaveiro, Natal" autocomplete="off" spellcheck="false">
+      <div class="busca__filtros" role="group" aria-label="Filtrar por coleção">
+        <button type="button" class="filtro" data-filtro="" aria-pressed="true">Todas <span>39</span></button>
+        <button type="button" class="filtro" data-filtro="fotos" aria-pressed="false">Com suas fotos <span>6</span></button><button type="button" class="filtro" data-filtro="quadros" aria-pressed="false">Quadros <span>6</span></button><button type="button" class="filtro" data-filtro="vasos" aria-pressed="false">Vasos <span>6</span></button><button type="button" class="filtro" data-filtro="sala" aria-pressed="false">Sala <span>4</span></button><button type="button" class="filtro" data-filtro="escritorio" aria-pressed="false">Escritório <span>5</span></button><button type="button" class="filtro" data-filtro="infantil" aria-pressed="false">Infantil <span>4</span></button><button type="button" class="filtro" data-filtro="halloween" aria-pressed="false">Halloween <span>3</span></button><button type="button" class="filtro" data-filtro="natal" aria-pressed="false">Natal <span>3</span></button><button type="button" class="filtro" data-filtro="dia-dos-namorados" aria-pressed="false">Dia dos Namorados <span>2</span></button>
+      </div>
+      <p class="busca__contagem" aria-live="polite" data-busca-contagem>39 produtos</p>
+      <ul class="busca__lista">
+        
+        <li data-colecao="fotos" data-texto="pets personalizacao com suas fotos com suas fotos">
+          <a href="colecoes/fotos/#pets" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/fotos-pets.webp" width="614" height="512" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Pets</span>
+            <span class="busca__colecao">Personalização com suas fotos</span>
+          </a>
+        </li>
+        <li data-colecao="fotos" data-texto="pessoas personalizacao com suas fotos com suas fotos">
+          <a href="colecoes/fotos/#pessoas" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/fotos-pessoas.webp" width="614" height="542" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Pessoas</span>
+            <span class="busca__colecao">Personalização com suas fotos</span>
+          </a>
+        </li>
+        <li data-colecao="fotos" data-texto="momentos personalizacao com suas fotos com suas fotos">
+          <a href="colecoes/fotos/#momentos" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/fotos-momentos.webp" width="614" height="534" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Momentos</span>
+            <span class="busca__colecao">Personalização com suas fotos</span>
+          </a>
+        </li>
+        <li data-colecao="fotos" data-texto="canecas personalizacao com suas fotos com suas fotos">
+          <a href="colecoes/fotos/#canecas" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/fotos-canecas.webp" width="622" height="512" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Canecas</span>
+            <span class="busca__colecao">Personalização com suas fotos</span>
+          </a>
+        </li>
+        <li data-colecao="fotos" data-texto="quebra-cabecas personalizacao com suas fotos com suas fotos">
+          <a href="colecoes/fotos/#quebra-cabecas" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/fotos-quebra-cabecas.webp" width="614" height="512" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Quebra-cabeças</span>
+            <span class="busca__colecao">Personalização com suas fotos</span>
+          </a>
+        </li>
+        <li data-colecao="fotos" data-texto="capinhas personalizacao com suas fotos com suas fotos">
+          <a href="colecoes/fotos/#capinhas" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/fotos-capinhas.webp" width="614" height="504" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Capinhas</span>
+            <span class="busca__colecao">Personalização com suas fotos</span>
+          </a>
+        </li>
+        <li data-colecao="quadros" data-texto="camisas de times quadros personalizaveis quadros cor tamanho nomes">
+          <a href="colecoes/quadros/#camisas-de-times" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/quadros-camisas.webp" width="660" height="656" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Camisas de times</span>
+            <span class="busca__colecao">Quadros personalizáveis</span>
+          </a>
+        </li>
+        <li data-colecao="quadros" data-texto="series, filmes e livros quadros personalizaveis quadros cor tamanho nomes">
+          <a href="colecoes/quadros/#series-filmes-e-livros" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/quadros-series.webp" width="634" height="644" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Séries, filmes e livros</span>
+            <span class="busca__colecao">Quadros personalizáveis</span>
+          </a>
+        </li>
+        <li data-colecao="quadros" data-texto="musica quadros personalizaveis quadros cor tamanho nomes">
+          <a href="colecoes/quadros/#musica" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/quadros-musica.webp" width="654" height="656" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Música</span>
+            <span class="busca__colecao">Quadros personalizáveis</span>
+          </a>
+        </li>
+        <li data-colecao="quadros" data-texto="objetos quadros personalizaveis quadros cor tamanho nomes">
+          <a href="colecoes/quadros/#objetos" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/quadros-objetos.webp" width="664" height="668" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Objetos</span>
+            <span class="busca__colecao">Quadros personalizáveis</span>
+          </a>
+        </li>
+        <li data-colecao="quadros" data-texto="marcos pessoais quadros personalizaveis quadros cor tamanho nomes">
+          <a href="colecoes/quadros/#marcos-pessoais" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/quadros-marcos.webp" width="642" height="668" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Marcos pessoais</span>
+            <span class="busca__colecao">Quadros personalizáveis</span>
+          </a>
+        </li>
+        <li data-colecao="quadros" data-texto="carros quadros personalizaveis quadros cor tamanho nomes">
+          <a href="colecoes/quadros/#carros" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/quadros-carros.webp" width="654" height="668" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Carros</span>
+            <span class="busca__colecao">Quadros personalizáveis</span>
+          </a>
+        </li>
+        <li data-colecao="vasos" data-texto="vasos texturizados vasos personalizaveis vasos cor tamanho nomes">
+          <a href="colecoes/vasos/#vasos-texturizados" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/vasos-texturizados.webp" width="684" height="626" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Vasos texturizados</span>
+            <span class="busca__colecao">Vasos personalizáveis</span>
+          </a>
+        </li>
+        <li data-colecao="vasos" data-texto="vasos emoji vasos personalizaveis vasos cor tamanho nomes">
+          <a href="colecoes/vasos/#vasos-emoji" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/vasos-emoji.webp" width="650" height="626" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Vasos emoji</span>
+            <span class="busca__colecao">Vasos personalizáveis</span>
+          </a>
+        </li>
+        <li data-colecao="vasos" data-texto="vasos de frutas vasos personalizaveis vasos cor tamanho nomes">
+          <a href="colecoes/vasos/#vasos-de-frutas" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/vasos-frutas.webp" width="670" height="626" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Vasos de frutas</span>
+            <span class="busca__colecao">Vasos personalizáveis</span>
+          </a>
+        </li>
+        <li data-colecao="vasos" data-texto="vasos de animais vasos personalizaveis vasos cor tamanho nomes">
+          <a href="colecoes/vasos/#vasos-de-animais" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/vasos-animais.webp" width="678" height="612" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Vasos de animais</span>
+            <span class="busca__colecao">Vasos personalizáveis</span>
+          </a>
+        </li>
+        <li data-colecao="vasos" data-texto="vasos de bolas vasos personalizaveis vasos cor tamanho nomes">
+          <a href="colecoes/vasos/#vasos-de-bolas" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/vasos-bolas.webp" width="650" height="612" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Vasos de bolas</span>
+            <span class="busca__colecao">Vasos personalizáveis</span>
+          </a>
+        </li>
+        <li data-colecao="vasos" data-texto="vasos diversos vasos personalizaveis vasos cor tamanho nomes">
+          <a href="colecoes/vasos/#vasos-diversos" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/vasos-diversos.webp" width="670" height="612" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Vasos diversos</span>
+            <span class="busca__colecao">Vasos personalizáveis</span>
+          </a>
+        </li>
+        <li data-colecao="sala" data-texto="quadros modulares de parede decoracoes para sala sala cor tamanho nomes">
+          <a href="colecoes/sala/#quadros-modulares-de-parede" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/sala-mapa.webp" width="954" height="1016" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Quadros modulares de parede</span>
+            <span class="busca__colecao">Decorações para sala</span>
+          </a>
+        </li>
+        <li data-colecao="sala" data-texto="iluminacao decoracoes para sala sala cor tamanho nomes">
+          <a href="colecoes/sala/#iluminacao" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/sala-iluminacao.webp" width="642" height="566" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Iluminação</span>
+            <span class="busca__colecao">Decorações para sala</span>
+          </a>
+        </li>
+        <li data-colecao="sala" data-texto="decoracoes interativas decoracoes para sala sala cor tamanho nomes">
+          <a href="colecoes/sala/#decoracoes-interativas" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/sala-interativas.webp" width="668" height="554" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Decorações interativas</span>
+            <span class="busca__colecao">Decorações para sala</span>
+          </a>
+        </li>
+        <li data-colecao="sala" data-texto="esculturas decoracoes para sala sala cor tamanho nomes">
+          <a href="colecoes/sala/#esculturas" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/sala-esculturas.webp" width="642" height="554" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Esculturas</span>
+            <span class="busca__colecao">Decorações para sala</span>
+          </a>
+        </li>
+        <li data-colecao="escritorio" data-texto="teclas para teclado escritorio personalizavel escritorio cor tamanho nomes">
+          <a href="colecoes/escritorio/#teclas-para-teclado" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/escritorio-teclas.webp" width="642" height="420" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Teclas para teclado</span>
+            <span class="busca__colecao">Escritório personalizável</span>
+          </a>
+        </li>
+        <li data-colecao="escritorio" data-texto="organizadores de cabos escritorio personalizavel escritorio cor tamanho nomes">
+          <a href="colecoes/escritorio/#organizadores-de-cabos" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/escritorio-cabos.webp" width="624" height="420" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Organizadores de cabos</span>
+            <span class="busca__colecao">Escritório personalizável</span>
+          </a>
+        </li>
+        <li data-colecao="escritorio" data-texto="ponta de lapis escritorio personalizavel escritorio cor tamanho nomes">
+          <a href="colecoes/escritorio/#ponta-de-lapis" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/escritorio-ponta-lapis.webp" width="644" height="420" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Ponta de lápis</span>
+            <span class="busca__colecao">Escritório personalizável</span>
+          </a>
+        </li>
+        <li data-colecao="escritorio" data-texto="porta lapis escritorio personalizavel escritorio cor tamanho nomes">
+          <a href="colecoes/escritorio/#porta-lapis" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/escritorio-porta-lapis.webp" width="642" height="274" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Porta lápis</span>
+            <span class="busca__colecao">Escritório personalizável</span>
+          </a>
+        </li>
+        <li data-colecao="escritorio" data-texto="porta celulares escritorio personalizavel escritorio cor tamanho nomes">
+          <a href="colecoes/escritorio/#porta-celulares" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/escritorio-porta-celulares.webp" width="626" height="274" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Porta celulares</span>
+            <span class="busca__colecao">Escritório personalizável</span>
+          </a>
+        </li>
+        <li data-colecao="infantil" data-texto="brinquedos infantil personalizavel infantil cor tamanho nomes">
+          <a href="colecoes/infantil/#brinquedos" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/infantil-dinos.webp" width="798" height="448" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Brinquedos</span>
+            <span class="busca__colecao">Infantil personalizável</span>
+          </a>
+        </li>
+        <li data-colecao="infantil" data-texto="quebra-cabecas pixelados infantil personalizavel infantil cor tamanho nomes">
+          <a href="colecoes/infantil/#quebra-cabecas-pixelados" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/infantil-pixelados.webp" width="502" height="484" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Quebra-cabeças pixelados</span>
+            <span class="busca__colecao">Infantil personalizável</span>
+          </a>
+        </li>
+        <li data-colecao="infantil" data-texto="porta trecos infantil personalizavel infantil cor tamanho nomes">
+          <a href="colecoes/infantil/#porta-trecos" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/infantil-porta-trecos.webp" width="448" height="536" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Porta trecos</span>
+            <span class="busca__colecao">Infantil personalizável</span>
+          </a>
+        </li>
+        <li data-colecao="infantil" data-texto="decoracoes para quarto infantil personalizavel infantil cor tamanho nomes">
+          <a href="colecoes/infantil/#decoracoes-para-quarto" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/infantil-quarto.webp" width="626" height="430" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Decorações para quarto</span>
+            <span class="busca__colecao">Infantil personalizável</span>
+          </a>
+        </li>
+        <li data-colecao="halloween" data-texto="miniaturas halloween personalizavel halloween cor tamanho">
+          <a href="colecoes/halloween/#miniaturas" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/halloween-miniaturas.webp" width="1400" height="402" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Miniaturas</span>
+            <span class="busca__colecao">Halloween personalizável</span>
+          </a>
+        </li>
+        <li data-colecao="halloween" data-texto="vasos / potes halloween personalizavel halloween cor tamanho">
+          <a href="colecoes/halloween/#vasos-potes" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/halloween-vasos.webp" width="1400" height="740" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Vasos / Potes</span>
+            <span class="busca__colecao">Halloween personalizável</span>
+          </a>
+        </li>
+        <li data-colecao="halloween" data-texto="lanternas halloween personalizavel halloween cor tamanho">
+          <a href="colecoes/halloween/#lanternas" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/halloween-lanternas.webp" width="1290" height="442" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Lanternas</span>
+            <span class="busca__colecao">Halloween personalizável</span>
+          </a>
+        </li>
+        <li data-colecao="natal" data-texto="miniaturas natal personalizavel natal cor tamanho nomes">
+          <a href="colecoes/natal/#miniaturas" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/natal-miniaturas.webp" width="1400" height="469" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Miniaturas</span>
+            <span class="busca__colecao">Natal personalizável</span>
+          </a>
+        </li>
+        <li data-colecao="natal" data-texto="enfeites natal personalizavel natal cor tamanho nomes">
+          <a href="colecoes/natal/#enfeites" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/natal-enfeites.webp" width="1154" height="628" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Enfeites</span>
+            <span class="busca__colecao">Natal personalizável</span>
+          </a>
+        </li>
+        <li data-colecao="natal" data-texto="decoracoes natal personalizavel natal cor tamanho nomes">
+          <a href="colecoes/natal/#decoracoes" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/natal-decoracoes.webp" width="1078" height="866" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Decorações</span>
+            <span class="busca__colecao">Natal personalizável</span>
+          </a>
+        </li>
+        <li data-colecao="dia-dos-namorados" data-texto="chaveiros dia dos namorados personalizavel dia dos namorados cor tamanho nomes">
+          <a href="colecoes/dia-dos-namorados/#chaveiros" data-gaveta-link>
+            <span class="busca__img busca__img--vazio" aria-hidden="true"></span>
+            <span class="busca__nome">Chaveiros</span>
+            <span class="busca__colecao">Dia dos Namorados personalizável</span>
+          </a>
+        </li>
+        <li data-colecao="dia-dos-namorados" data-texto="quadros dia dos namorados personalizavel dia dos namorados cor tamanho nomes">
+          <a href="colecoes/dia-dos-namorados/#quadros" data-gaveta-link>
+            <span class="busca__img"><img src="assets/img/namorados-quadros.webp" width="1316" height="390" alt="" loading="lazy" decoding="async"></span>
+            <span class="busca__nome">Quadros</span>
+            <span class="busca__colecao">Dia dos Namorados personalizável</span>
+          </a>
+        </li>
+      </ul>
+      <div class="busca__vazio" hidden data-busca-vazio>
+        <p>Nenhum produto encontrado com esse nome.</p>
+        <a class="link-seta" href="https://wa.me/5547997646327?text=Ol%C3%A1!%20Procurei%20no%20site%20e%20n%C3%A3o%20encontrei%20o%20que%20preciso.%20Voc%C3%AAs%20fazem%20sob%20medida%3F" target="_blank" rel="noopener">Pedir um projeto sob medida <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4.5 16.5 10 11 15.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+      </div>
+    </section>
+
+    <nav class="gaveta__nav" aria-label="Site">
+      <ul>
+        <li><a href="#sob-medida" data-gaveta-link>Sob medida</a></li><li><a href="#sobre" data-gaveta-link>Sobre</a></li><li><a href="#contato" data-gaveta-link>Contato</a></li>
+      </ul>
+    </nav>
+
+    <a class="botao botao--laranja gaveta__cta" href="https://wa.me/5547997646327?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20CRIEXO%20e%20gostaria%20de%20solicitar%20um%20projeto." target="_blank" rel="noopener">
+      Solicitar projeto <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4.5 16.5 10 11 15.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+    </a>
+  </div>
+</dialog>
 <main id="conteudo">
 
 <section class="hero" aria-labelledby="hero-titulo">

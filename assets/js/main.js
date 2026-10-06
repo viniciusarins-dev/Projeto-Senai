@@ -1,8 +1,7 @@
 // CRIEXO — interações do site. Sem dependências.
 
-// Header: muda de fundo ao rolar e controla o menu no celular.
+// Header: muda de fundo ao rolar.
 const topo = document.querySelector("[data-topo]");
-const botaoMenu = document.querySelector("[data-menu]");
 
 if (topo) {
   const aoRolar = () => topo.classList.toggle("is-rolado", window.scrollY > 24);
@@ -10,20 +9,78 @@ if (topo) {
   window.addEventListener("scroll", aoRolar, { passive: true });
 }
 
-if (topo && botaoMenu) {
-  const definirMenu = (aberto) => {
-    topo.classList.toggle("is-aberto", aberto);
-    botaoMenu.setAttribute("aria-expanded", String(aberto));
-    document.body.classList.toggle("sem-rolagem", aberto);
+// Barra lateral (menu + busca de produtos).
+const gaveta = document.getElementById("gaveta");
+
+if (gaveta && typeof gaveta.showModal === "function") {
+  const campoBusca = gaveta.querySelector("#busca-campo");
+
+  const abrir = (focarBusca) => {
+    if (gaveta.open) return;
+    gaveta.showModal();
+    document.body.classList.add("sem-rolagem");
+    if (focarBusca) campoBusca.focus();
   };
-  botaoMenu.addEventListener("click", () => definirMenu(!topo.classList.contains("is-aberto")));
-  topo.querySelectorAll(".topo__nav a").forEach((a) => a.addEventListener("click", () => definirMenu(false)));
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && topo.classList.contains("is-aberto")) {
-      definirMenu(false);
-      botaoMenu.focus();
+  const fechar = () => gaveta.open && gaveta.close();
+
+  document.querySelectorAll("[data-gaveta-abrir]").forEach((b) =>
+    b.addEventListener("click", () => abrir(b.dataset.gavetaAbrir === "busca"))
+  );
+  gaveta.querySelector("[data-gaveta-fechar]").addEventListener("click", fechar);
+  gaveta.addEventListener("close", () => document.body.classList.remove("sem-rolagem"));
+  // Clique fora do painel (no fundo escurecido) fecha.
+  gaveta.addEventListener("click", (e) => {
+    if (e.target === gaveta) fechar();
+  });
+  // O campo de busca consome o primeiro Esc para se limpar; garantimos o fechamento.
+  gaveta.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      e.preventDefault();
+      fechar();
     }
   });
+  gaveta.querySelectorAll("[data-gaveta-link]").forEach((a) => a.addEventListener("click", fechar));
+} else if (gaveta) {
+  // Navegador sem <dialog>: os botões levam direto às coleções.
+  document.querySelectorAll("[data-gaveta-abrir]").forEach((b) =>
+    b.addEventListener("click", () => (location.hash = "colecoes"))
+  );
+}
+
+// Busca e filtro por coleção.
+const busca = document.querySelector("[data-busca]");
+
+if (busca) {
+  const campo = busca.querySelector("#busca-campo");
+  const filtros = [...busca.querySelectorAll("[data-filtro]")];
+  const itens = [...busca.querySelectorAll("li[data-texto]")];
+  const contagem = busca.querySelector("[data-busca-contagem]");
+  const vazio = busca.querySelector("[data-busca-vazio]");
+  const normalizar = (t) => t.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+  let colecao = "";
+
+  const aplicar = () => {
+    const termos = normalizar(campo.value).split(/\s+/).filter(Boolean);
+    let visiveis = 0;
+    itens.forEach((li) => {
+      const ok =
+        (!colecao || li.dataset.colecao === colecao) &&
+        termos.every((t) => li.dataset.texto.includes(t));
+      li.hidden = !ok;
+      if (ok) visiveis++;
+    });
+    contagem.textContent = visiveis === 1 ? "1 produto" : `${visiveis} produtos`;
+    vazio.hidden = visiveis > 0;
+  };
+
+  campo.addEventListener("input", aplicar);
+  filtros.forEach((f) =>
+    f.addEventListener("click", () => {
+      colecao = f.dataset.filtro;
+      filtros.forEach((x) => x.setAttribute("aria-pressed", String(x === f)));
+      aplicar();
+    })
+  );
 }
 
 // Entrada suave dos elementos marcados com data-reveal.
